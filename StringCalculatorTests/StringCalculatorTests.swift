@@ -33,4 +33,18 @@ struct StringCalculatorTests {
         let calculator = StringCalculator()
         #expect(try calculator.add("//;\n1;2") == 3)
     }
+    
+    @Test
+    func testNegativeNumbersThrowError() async throws {
+        let calculator = StringCalculator()
+        
+        do {
+            _ = try calculator.add("1,-2")
+            #expect(Bool(false), "Expected to throw an error for negative numbers")
+        } catch {
+            #expect(error.localizedDescription.contains("-2"))
+        }
+    }
+    
+    
 }
