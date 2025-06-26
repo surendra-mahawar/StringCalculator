@@ -13,6 +13,7 @@ A Swift-based iOS app built using SwiftUI to calculate the sum of numbers from a
 git clone https://github.com/surendra-mahawar/StringCalculator.git
 cd StringCalculator
 open StringCalculator.xcodeproj
+```
 
 ## Project Structure
 .
@@ -20,8 +21,11 @@ open StringCalculator.xcodeproj
 ├── StringCalculator
 │   ├── Assets.xcassets
 │   ├── ContentView.swift
+│   ├── model
 │   └── StringCalculatorApp.swift
-└── StringCalculator.xcodeproj
-    ├── project.pbxproj
-    ├── project.xcworkspace
-    └── xcuserdata
+├── StringCalculator.xcodeproj
+│   ├── project.pbxproj
+│   ├── project.xcworkspace
+│   └── xcuserdata
+└── StringCalculatorTests
+    └── StringCalculatorTests.swift
