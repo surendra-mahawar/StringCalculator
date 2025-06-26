@@ -19,7 +19,13 @@ struct ContentView: View {
                 .padding()
             
             Button("Calculate") {
-                // todo
+                do {
+                    let calc = StringCalculator()
+                    let sum = try calc.add(input)
+                    result = "\(sum)"
+                } catch {
+                    result = "Error: \(error.localizedDescription)"
+                }
             }
             
             Text("Result: \(result)")
