@@ -10,7 +10,9 @@ import Foundation
 struct StringCalculator {
     
     func add(_ input: String) throws -> Int {
-        return input.isEmpty ? 0 : Int(input) ?? 0
+        let trimmed = input.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return 0 }
+        return Int(trimmed) ?? 0
     }
 }
 
