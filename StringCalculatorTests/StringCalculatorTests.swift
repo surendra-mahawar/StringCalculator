@@ -27,4 +27,10 @@ struct StringCalculatorTests {
         let calculator = StringCalculator()
         #expect(try calculator.add("1\n2,3") == 6)
     }
+    
+    @Test
+    func testCustomDelimiter() async throws {
+        let calculator = StringCalculator()
+        #expect(try calculator.add("//;\n1;2") == 3)
+    }
 }
