@@ -9,26 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var input: String = ""
-    @State private var result: String = ""
+    @StateObject private var viewModel = CalculatorViewModel()
     
     var body: some View {
         VStack(spacing: 20) {
-            TextField("Enter numbers", text: $input)
+            TextField("Enter numbers", text: $viewModel.input)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding()
             
             Button("Calculate") {
-                do {
-                    let calc = StringCalculator()
-                    let sum = try calc.add(input)
-                    result = "\(sum)"
-                } catch {
-                    result = "Error: \(error.localizedDescription)"
-                }
+                viewModel.calculate()
             }
             
-            Text("Result: \(result)")
+            Text("Result: \(viewModel.result)")
                 .font(.title2)
         }
         .padding()

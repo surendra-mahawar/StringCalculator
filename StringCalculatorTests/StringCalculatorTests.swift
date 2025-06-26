@@ -15,4 +15,10 @@ struct StringCalculatorTests {
         let calculator = StringCalculator()
         #expect(try calculator.add("") == 0)
     }
+    
+    @Test
+    func testSingleNumberReturnsItself() async throws {
+        let calculator = StringCalculator()
+        #expect(try calculator.add("5") == 5)
+    }
 }

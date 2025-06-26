@@ -20,12 +20,23 @@ open StringCalculator.xcodeproj
 ├── README.md
 ├── StringCalculator
 │   ├── Assets.xcassets
-│   ├── ContentView.swift
+│   │   ├── AccentColor.colorset
+│   │   ├── AppIcon.appiconset
+│   │   └── Contents.json
 │   ├── model
-│   └── StringCalculatorApp.swift
+│   │   └── StringCalculator.swift
+│   ├── StringCalculatorApp.swift
+│   ├── view
+│   │   └── ContentView.swift
+│   └── viewmodel
+│       └── CalculatorViewModel.swift
 ├── StringCalculator.xcodeproj
 │   ├── project.pbxproj
 │   ├── project.xcworkspace
+│   │   ├── contents.xcworkspacedata
+│   │   ├── xcshareddata
+│   │   └── xcuserdata
 │   └── xcuserdata
+│       └── xpindia.xcuserdatad
 └── StringCalculatorTests
-    └── StringCalculatorTests.swift
+
