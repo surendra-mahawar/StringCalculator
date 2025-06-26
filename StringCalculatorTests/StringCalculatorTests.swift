@@ -46,5 +46,16 @@ struct StringCalculatorTests {
         }
     }
     
-    
+    @Test
+    func testMultipleNegativeNumbers() async throws {
+        let calculator = StringCalculator()
+        
+        do {
+            _ = try calculator.add("-1,-4,5")
+            #expect(Bool(false), "Expected to throw an error for multiple negatives")
+        } catch {
+            #expect(error.localizedDescription.contains("-1"))
+            #expect(error.localizedDescription.contains("-4"))
+        }
+    }
 }
