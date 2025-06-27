@@ -12,19 +12,28 @@ struct ContentView: View {
     @StateObject private var viewModel = CalculatorViewModel()
     
     var body: some View {
-        VStack(spacing: 20) {
-            TextField("Enter numbers", text: $viewModel.input)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            Button("Calculate") {
-                viewModel.calculate()
+        NavigationStack {
+            VStack(spacing: 20) {
+                Text("\(viewModel.result)")
+                    .font(.title2)
+                    .padding(.all)
+                
+                TextField("Enter numbers", text: $viewModel.input)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                
+                Button("Calculate") {
+                    viewModel.calculate()
+                }
+                .frame(width: 80, height: 35, alignment: .center)
+                .padding(.all, 4)
+                .background(Color.black.opacity(0.75))
+                .foregroundColor(.white)
+                .cornerRadius(8)
             }
-            
-            Text("Result: \(viewModel.result)")
-                .font(.title2)
+            .padding()
+            .navigationTitle("String Calculator")
         }
-        .padding()
     }
 }
 

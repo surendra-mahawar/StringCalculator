@@ -18,25 +18,21 @@ open StringCalculator.xcodeproj
 ## Project Structure
 .
 ├── README.md
-├── StringCalculator
+├── StringCalculator/
 │   ├── Assets.xcassets
 │   │   ├── AccentColor.colorset
 │   │   ├── AppIcon.appiconset
 │   │   └── Contents.json
-│   ├── model
+│   ├── model/
 │   │   └── StringCalculator.swift
-│   ├── StringCalculatorApp.swift
-│   ├── view
+│   ├── viewmodel/
+│   │   └── CalculatorViewModel.swift
+│   ├── view/
 │   │   └── ContentView.swift
-│   └── viewmodel
-│       └── CalculatorViewModel.swift
-├── StringCalculator.xcodeproj
+│   └── StringCalculatorApp.swift
+├── StringCalculator.xcodeproj/
 │   ├── project.pbxproj
 │   ├── project.xcworkspace
-│   │   ├── contents.xcworkspacedata
-│   │   ├── xcshareddata
-│   │   └── xcuserdata
 │   └── xcuserdata
-│       └── xpindia.xcuserdatad
-└── StringCalculatorTests
-
+└── StringCalculatorTests/
+    └── StringCalculatorTests.swift
